@@ -1,0 +1,4 @@
+//Presets que voy a utilizar
+{
+  "presets": ["@babel/preset-env", "@babel/preset-react"]
+}
