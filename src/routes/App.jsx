@@ -9,10 +9,18 @@ import Payment from '../containers/Payment';
 import Success from '../containers/Success';
 import NotFound from '../containers/NotFound';
 import Layout from '../components/Layout';
+//Importamos el contexto
+import AppContext from '../context/AppContext';
+//Importamos el Hook useInitialState
+import useInitialState from '../hooks/useInitialState';
 
 const App = () => {
+
+  const initialState = useInitialState()
   return (
-    //Encapsulamos nuestras rutas
+    // Encapsulamos toda la App en el proveedor de nuestro contexto y le pasamos toda su lógica en el Value
+    <AppContext.Provider value={initialState}>
+    {/* Encapsulamos nuestras rutas */}
     <BrowserRouter>
         {/* Con el componente Layout podemos tener siempr el Header y el Footer */}
         <Layout>
@@ -29,6 +37,7 @@ const App = () => {
         </Routes>
         </Layout>
     </BrowserRouter>
+    </AppContext.Provider>
   )
 }
 
