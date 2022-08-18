@@ -12,6 +12,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
+    publicPath: '/'
   },
   resolve: {
     //Extenciones que vamos a utilizar
@@ -73,6 +74,7 @@ module.exports = {
     static: path.join(__dirname, 'dist'),
     //Comprimir
     compress: true,
+    historyApiFallback: true,
     //Puerto
     port: 3005,
   },
