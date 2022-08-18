@@ -23,9 +23,19 @@ const useInitialState = () => {
     });
   };
 
+    //Función para agregar un comprador
+    const addToBuyer = payload => {
+      //Actualiza el state.cart con la misma información que tenia sumandole el payload o lo nuevo que se agrega al carrito
+      setState({
+        ...state,
+        buyer: [...state.buyer, payload],
+      });
+    }
+
   return {
     addToCart,
     removeFromCart,
+    addToBuyer,
     state,
   };
 };
