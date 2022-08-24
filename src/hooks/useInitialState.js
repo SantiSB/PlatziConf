@@ -32,11 +32,21 @@ const useInitialState = () => {
       });
     }
 
+    //Función para agregar una nueva orden
+    const addNewOrder = payload => {
+      setState({
+        ...state,
+        orders: [...state.orders, payload]
+      })
+    }
+
   return {
     addToCart,
     removeFromCart,
     addToBuyer,
+    addNewOrder,
     state,
+
   };
 };
 
