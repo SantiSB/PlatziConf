@@ -1,6 +1,5 @@
 name: Build and Deploy
 on: [push]
-
 jobs:
   build:
     name: Build
@@ -33,5 +32,5 @@ jobs:
         uses: w9jds/firebase-action@master
         with:
           args: deploy --only hosting
-        env:
+        env: 
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
