@@ -9,6 +9,7 @@ const Success = () => {
   const { buyer } = state;
   const location = useGoogleAddress(buyer[0].address);
 
+
   return (
     <div className="Success">
       <div className="Success-content">
