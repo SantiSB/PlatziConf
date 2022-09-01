@@ -15,30 +15,37 @@ import AppContext from '../context/AppContext';
 import useInitialState from '../hooks/useInitialState';
 
 const App = () => {
+  const initialState = useInitialState();
 
-  const initialState = useInitialState()
+  const isEmpty = Object.keys(initialState.state).length;
   return (
-    // Encapsulamos toda la App en el proveedor de nuestro contexto y le pasamos toda su lógica en el Value
-    <AppContext.Provider value={initialState}>
-    {/* Encapsulamos nuestras rutas */}
-    <BrowserRouter>
-        {/* Con el componente Layout podemos tener siempr el Header y el Footer */}
-        <Layout>
-        {/* Definimos cada ruta */}
-        <Routes>
-            {/* Ruta que representa el home */}
-            <Route path="/" element={<Home />} />
-            <Route path="/checkout" element={<Checkout />} />
-            <Route path="/checkout/information" element={<Information />} />
-            <Route path="/checkout/payment" element={<Payment />} />
-            <Route path="/checkout/success" element={<Success />} />
-            {/* Ruta que representa not found */}
-            <Route path="*" element={<NotFound />} />
-        </Routes>
-        </Layout>
-    </BrowserRouter>
-    </AppContext.Provider>
-  )
-}
+    <>
+      {isEmpty > 0 ? (
+        <AppContext.Provider value={initialState}>
+          {/* Encapsulamos nuestras rutas */}
+          <BrowserRouter>
+            {/* Con el componente Layout podemos tener siempr el Header y el Footer */}
+            <Layout>
+              {/* Definimos cada ruta */}
+              <Routes>
+                {/* Ruta que representa el home */}
+                <Route path="/" element={<Home />} />
+                <Route path="/checkout" element={<Checkout />} />
+                <Route path="/checkout/information" element={<Information />} />
+                <Route path="/checkout/payment" element={<Payment />} />
+                <Route path="/checkout/success" element={<Success />} />
+                {/* Ruta que representa not found */}
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+            </Layout>
+          </BrowserRouter>
+        </AppContext.Provider>
+      ) : (
+        <h1>Cargando...</h1>
+      )}
+      {/* // Encapsulamos toda la App en el proveedor de nuestro contexto y le pasamos toda su lógica en el Value */}
+    </>
+  );
+};
 
-export default App
+export default App;

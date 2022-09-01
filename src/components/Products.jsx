@@ -6,12 +6,12 @@ import AppContext from '../context/AppContext';
 
 const Products = () => {
   //Conectamos el contexto, traemos el estado y la función addToCart
-  const { state, addToCart } = useContext(AppContext);
-  const { products } = state;
+  const { products, addToCart } = useContext(AppContext);
   //Función que agrega al carrito
   const handleAddToCart = (product) => () => {
     addToCart(product);
   };
+
   return (
     <div className="Products">
       <div className="Products-items">
