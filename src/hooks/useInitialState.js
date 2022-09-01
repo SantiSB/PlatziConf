@@ -7,7 +7,6 @@ const API2 = 'https://us-central1-gndx-fake-api.cloudfunctions.net/api';
 
 const useInitialState = () => {
     //Estado
-const API = 'http://localhost:1337/api/products?populate=%2A';
 const [state, setState] = useState(initialState);
 
   const [products, setProducts] = useState([]);
