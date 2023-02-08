@@ -1,27 +1,26 @@
 import React, { useContext } from 'react';
 import Product from './Product';
 import '../styles/components/Products.css';
-//Importamos AppContext (el contexto)
 import AppContext from '../context/AppContext';
+import { Grid } from '@mui/material';
 
-const Products = ({products}) => {
-  //Conectamos el contexto, traemos el estado y la función addToCart
-  const { productos, addToCart } = useContext(AppContext);
-  //Función que agrega al carrito
+const Products = ({ products }) => {
+
+  const { addToCart } = useContext(AppContext);
+
   const handleAddToCart = (product) => () => {
     addToCart(product);
   };
 
   return (
-    <div className="Products">
-      <div className="Products-items">
-        {/* Mapeamos los productos */}
-        {products.map((product) => (
-          //Por cada producto renderizamos un componente product al que se le pasa por parametro el producto y una key
-          //Le pasamos la función de agregar al carrito
-          <Product key={product.id} product={product} handleAddToCart={handleAddToCart}/>
-        ))}
-      </div>
+    <div style={{marginTop: '5rem'}}>
+    <Grid container columns={{ xs: 4, sm: 8, md: 12 }}>
+      {products.map((product) => (
+        <Grid xs={12} sm={4} key={product.id}>
+          <Product key={product.id} product={product} handleAddToCart={handleAddToCart} />
+        </Grid>
+      ))}
+    </Grid>
     </div>
   );
 };
