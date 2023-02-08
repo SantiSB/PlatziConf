@@ -1,3 +1,4 @@
+import { Button, Divider, Grid, ListItem, ListItemText, Typography } from '@mui/material';
 import React, { useRef, useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import AppContext from '../context/AppContext';
@@ -5,72 +6,69 @@ import '../styles/components/Information.css';
 
 const Information = () => {
   const { state, addToBuyer } = useContext(AppContext);
-  //Referencia formulario
   const form = useRef(null);
-//Creamos nuestro History
   const navigate = useNavigate()
   const { cart } = state;
 
   const handleSubmit = () => {
-    //Capturamos la información del formulario
     const formData = new FormData(form.current);
     const buyer = {
       'name': formData.get('name'),
-      'email':formData.get('email'),
-      'address':formData.get('address'),
-      'apto':formData.get('apto'),
-      'city':formData.get('city'),
-      'country':formData.get('country'),
-      'state':formData.get('state'),
-      'cp':formData.get('cp'),
-      'phone':formData.get('phone'),
+      'email': formData.get('email'),
+      'address': formData.get('address'),
+      'city': formData.get('city'),
+      'country': formData.get('country'),
+      'state': formData.get('state'),
+      'cp': formData.get('cp'),
+      'phone': formData.get('phone'),
     }
-    //Enviamos la información del comprador
     addToBuyer(buyer);
-    //Usamos useNavigate para redirigir la navegación a la siguiente página
     navigate('/checkout/payment')
   }
 
   return (
-    <div className="Information">
-      <div className="Information-content">
-        <div className="Information-head">
-          <h2>Informacion de contacto:</h2>
-        </div>
+    <Grid container style={{ marginTop: '5rem' }}>
+      <Grid item xs={12} sm={8} sx={{ padding: '1rem' }}>
+        <Typography variant='h4' sx={{ margin: '1rem 0rem' }}>Contact Information:</Typography>
+        <Divider sx={{ margin: '1rem 0rem' }} />
         <div className="Information-form">
           <form ref={form}>
-            <input type="text" placeholder="Nombre completo" name="name" />
-            <input type="text" placeholder="Correo Electronico" name="email" />
-            <input type="text" placeholder="Direccion" name="address" />
-            <input type="text" placeholder="Apto" name="apto" />
-            <input type="text" placeholder="Ciudad" name="city" />
-            <input type="text" placeholder="Pais" name="country" />
-            <input type="text" placeholder="Estado" name="state" />
-            <input type="text" placeholder="Codigo postal" name="cp" />
-            <input type="text" placeholder="Telefono" name="phone" />
+            <input type="text" placeholder="Full Name" name="name" />
+            <input type="text" placeholder="E-Mail" name="email" />
+            <input type="text" placeholder="Address" name="address" />
+            <input type="text" placeholder="City" name="city" />
+            <input type="text" placeholder="Country" name="country" />
+            <input type="text" placeholder="State" name="state" />
+            <input type="text" placeholder="Zip Code" name="cp" />
+            <input type="text" placeholder="Cellphone" name="phone" />
           </form>
         </div>
-        <div className="Information-buttons">
-          <div className="Information-back">
-            <Link to="/checkout">Regresar</Link>
-          </div>
-          <div className="Information-next">
-            <button type="button" onClick={handleSubmit}>Pagar</button>
-          </div>
-        </div>
-      </div>
-      <div className="Information-sidebar">
-        <h3>Pedido:</h3>
+      </Grid>
+      <Grid item xs={12} sm={4} className="Information-sidebar" sx={{ padding: '1rem' }}>
+        <Typography variant='h4' sx={{ margin: '1rem 0rem' }}>Order:</Typography>
+        <Divider sx={{ margin: '1rem 0rem' }} />
         {cart.map((item) => (
-          <div className="Information-item" key={item.title}>
-            <div className="Information-element">
-              <h4>{item.itle}</h4>
-              <span>${item.price}</span>
-            </div>
-          </div>
+          <>
+            <ListItem>
+              <ListItemText
+                primary={item.title}
+              />
+              ${item.price}
+            </ListItem>
+            <Divider />
+
+          </>
         ))}
-      </div>
-    </div>
+        <div className="Information-buttons">
+          <Link to="/checkout">
+            <Button variant='outlined' type="button" color='secondary'>
+              Back
+            </Button>
+          </Link>
+          <Button variant='contained' type="button" onClick={handleSubmit} color='secondary'>Pay</Button>
+        </div>
+      </Grid>
+    </Grid>
   );
 };
 

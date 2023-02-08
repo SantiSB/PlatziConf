@@ -1,9 +1,27 @@
 .Payment {
-  grid-template-columns: 3fr 1fr;
-  grid-gap: 2rem;
-  grid-row-gap: 1.5em;
-  display: grid;
+  display: flex;
+  justify-content: center;
+  margin-top: 5rem;
 }
+
+.Payment-content {
+  width: 100%;
+}
+
+.Payment-button {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+
+}
+
+.Payment-button div{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 1rem;
+}
+
 .Payment-back {
   margin: 10px 0 0 0;
 }

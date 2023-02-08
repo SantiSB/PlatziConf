@@ -10,7 +10,7 @@ const Header = () => {
   const { cart } = state;
 
   return (
-      <AppBar >
+      <AppBar color='secondary'>
         <Container maxWidth="xl" >
           <Toolbar disableGutters>
             <Box sx={{ flexGrow: 1 }}>
@@ -54,7 +54,7 @@ const Header = () => {
               <IconButton sx={{ p: 0 }}>
                 <Link to="/checkout" style={{display: 'flex', gap: '0.5rem'}}>
                   <ShoppingBasketIcon style={{'color':'#ffffff'}}/>
-                  {cart.length > 0 && <Typography>{cart.length}</Typography>}
+                  {cart.length > 0 && <Typography style={{'color':'#ffffff'}}>{cart.length}</Typography>}
                 </Link>
               </IconButton>
             </Box>

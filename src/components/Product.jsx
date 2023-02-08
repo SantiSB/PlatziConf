@@ -10,15 +10,15 @@ const Product = ({ product, handleAddToCart }) => {
           image={`${product.image}`}
         />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
-          {product.name}
+          <Typography gutterBottom variant="h5" component="div" color='secondary'>
+            {product.title} {`$${product.price}`}
           </Typography>
           <Typography variant="body2" color="text.secondary">
             {product.description}
           </Typography>
         </CardContent>
       <CardActions>
-        <Button size="small" color="primary" variant='outlined' onClick={handleAddToCart(product)}>
+        <Button size="small" color="secondary" variant='contained' onClick={handleAddToCart(product)}>
           Add to Cart
         </Button>
       </CardActions>

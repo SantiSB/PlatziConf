@@ -3,33 +3,27 @@ import { useNavigate } from 'react-router-dom';
 import { PayPalButton } from 'react-paypal-button-v2';
 import AppContext from '../context/AppContext';
 import '../styles/components/Payment.css';
+import { Divider, ListItem, ListItemText } from '@mui/material';
 
 const Payment = () => {
   const navigate = useNavigate()
-  //Traemos nuestro contexto
   const { state, addNewOrder } = useContext(AppContext);
-  //Traemos el estado de cart y buyer de nuestro contexto
   const { cart, buyer } = state;
 
-  //Configuramos las opciones de paypal para el boton
-  const paypalOtions = {
+  const paypalOptions = {
     clientId:
       'AUs0-lsTJUsr3K3A9oPVEpUIvr6v99RmRrIOyaicvnrguKHdJE2AOl-lCqfApGC1sSI2GXIPWnYZCaWN',
     intent: 'capture',
     currency: 'USD',
   };
 
-  //Estilos del boton
   const buttonStyles = {
     layout: 'vertical',
     shape: 'rect',
   };
 
-  //Función que agrega una nueva orden
   const handlePaymentSuccess = (data) => {
-    //Si el estado es completado
     if (data.status === 'COMPLETED') {
-      //Creamos nueva orden
       const newOrder = {
         buyer,
         product: cart,
@@ -37,7 +31,6 @@ const Payment = () => {
       };
 
       addNewOrder(newOrder);
-      // history.push('/checkout/success');
       navigate('/checkout/success')
     }
   };
@@ -52,20 +45,22 @@ const Payment = () => {
   return (
     <div className="Payment">
       <div className="Payment-content">
-        <h3>Resumen del pedido:</h3>
-        {/* Mapeamos el carrito y mostramos los elementos */}
+        <h3>Resume Order:</h3>
         {cart.map((item) => (
-          <div className="Payment-item" key={item.title}>
-            <div className="Payment-element">
-              <h4>{item.title}</h4>
-              <span>$ {item.price}</span>
-            </div>
-          </div>
+          <>
+            <ListItem>
+              <ListItemText
+                primary={item.title}
+              />
+              $ {item.price}
+            </ListItem>
+            <Divider />
+          </>
         ))}
         <div className="Payment-button">
-          
+
           <PayPalButton
-            paypalOptions={paypalOtions}
+            paypalOptions={paypalOptions}
             buttonStyles={buttonStyles}
             amount={handleSumTotal()}
             onSuccess={data => handlePaymentSuccess(data)}
@@ -74,7 +69,6 @@ const Payment = () => {
           />
         </div>
       </div>
-      <div />
     </div>
   );
 };

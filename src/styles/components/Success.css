@@ -1,6 +1,9 @@
 .Success {
-  margin: 0 0 4em 0;
+  margin: 5rem 0 4rem 0;
+  text-align: center;
 }
 .Success-map {
-  margin: 10px 0 0 0;
+  margin: 2rem 1rem;
+  border: 3.5px solid #9c28b1;
+  border-radius: 5px;
 }

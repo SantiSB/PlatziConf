@@ -9,7 +9,7 @@ body {
 
 .Main {
   padding: 10px;
-  grid-template-columns: minmax(auto, 768px);
+  grid-template-columns: minmax(auto, 80%);
   display: grid;
   justify-content: center;
 }

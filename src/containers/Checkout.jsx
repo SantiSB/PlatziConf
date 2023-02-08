@@ -2,7 +2,8 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import AppContext from '../context/AppContext';
 import '../styles/components/Checkout.css';
-import { Helmet } from 'react-helmet';
+import { Button, Divider, Grid, IconButton, List, ListItem, ListItemText, Paper, Typography } from '@mui/material';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 const Checkout = () => {
   const { state, removeFromCart } = useContext(AppContext);
@@ -12,7 +13,6 @@ const Checkout = () => {
     removeFromCart(product);
   };
 
-  //Funcion que suma todos precios de los elementos del cart
   const handleSumTotal = () => {
     const reducer = (accumulator, currentValue) => accumulator + currentValue.price;
     const sum = cart.reduce(reducer, 0);
@@ -20,38 +20,45 @@ const Checkout = () => {
   }
 
   return (
-    <>
-    <Helmet>
-        <title>Lista de pedidos</title>
-      </Helmet>
-    <div className="Checkout">
-      <div className="Checkout-content">
-        {cart.length > 0 ? <h3>Lista de pedidos:</h3> : <h3>Sin pedidos...</h3>}
-        {cart.map((item) => (
-          <div className="Checkout-item" key={item.title}>
-            <div className="Checkout-element">
-              <h4>{item.title}</h4>
-              <span>
-                $
-                {item.price}
-              </span>
-            </div>
-            <button type="button" onClick={handleRemove(item)}>
-              <i className="fas fa-trash-alt" />
-            </button>
-          </div>
-        ))}
-      </div>
-      {cart.length > 0 && (
-        <div className="Checkout-sidebar">
-          <h3>{`Precio Total: $ ${handleSumTotal()}`}</h3>
-          <Link to="/checkout/information">
-            <button type="button">Continuar pedido</button>
-          </Link>
-        </div>
-      )}
-    </div>
-    </>
+    <Grid container style={{ marginTop: '5rem' }}>
+      <Grid item xs={12}>
+        {cart.length > 0 ? <Typography variant='h3'>Pets List:</Typography> : <Typography variant='h3'>Without Pets...</Typography>}
+      </Grid>
+      <Grid item xs={12}>
+        <Grid container>
+          <Grid item xs={12} sm={8} >
+            <List>
+              {cart.map((item) => (
+                <>
+                <ListItem
+                  secondaryAction={
+                    <IconButton edge="end" aria-label="delete" onClick={handleRemove(item)}>
+                      <DeleteIcon />
+                    </IconButton>
+                  }
+                >
+                  <ListItemText
+                    primary={item.title}
+                  />
+                  {item.price}
+                </ListItem>
+                <Divider/>
+                </>
+              ))}
+            </List>
+          </Grid>
+          {cart.length > 0 && (
+            <Grid item xs={12} sm={4} sx={{ textAlign: 'center' }}>
+                <Typography variant='h5' sx={{ margin: '1rem' }}>{`Total Price: $ ${handleSumTotal()}`}</Typography >
+                <Link to="/checkout/information">
+                  <Button variant='contained' color='secondary'>Continue order</Button>
+                </Link>
+            </Grid>
+          )}
+        </Grid>
+      </Grid>
+    </Grid>
+
   );
 }
 
