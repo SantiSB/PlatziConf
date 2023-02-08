@@ -52,7 +52,7 @@ const Payment = () => {
   return (
     <div className="Payment">
       <div className="Payment-content">
-        <h3>Resument del pedido:</h3>
+        <h3>Resumen del pedido:</h3>
         {/* Mapeamos el carrito y mostramos los elementos */}
         {cart.map((item) => (
           <div className="Payment-item" key={item.title}>

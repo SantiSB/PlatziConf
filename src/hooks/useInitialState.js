@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react';
 import initialState from '../initialState';
 import axios from 'axios';
 
-const API = 'http://localhost:1337/api/products?populate=%2A';
-const API2 = 'https://us-central1-gndx-fake-api.cloudfunctions.net/api';
+// const API = 'http://localhost:1337/api/products?populate=%2A';
+// const API2 = 'https://us-central1-gndx-fake-api.cloudfunctions.net/api';
 
 const useInitialState = () => {
     //Estado
@@ -11,15 +11,13 @@ const [state, setState] = useState(initialState);
 
   const [products, setProducts] = useState([]);
 
-  
-
-  useEffect(() => {
-    async function loadProducts(){
-      const response = await axios(API)
-      setProducts(response.data.data)
-    }
-    loadProducts()
-  }, [])
+  // useEffect(() => {
+  //   async function loadProducts(){
+  //     const response = await axios(API)
+  //     setProducts(response.data.data)
+  //   }
+  //   loadProducts()
+  // }, [])
 
   //Función para agregar al carrito
   const addToCart = payload => {

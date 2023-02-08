@@ -4,9 +4,9 @@ import '../styles/components/Products.css';
 //Importamos AppContext (el contexto)
 import AppContext from '../context/AppContext';
 
-const Products = () => {
+const Products = ({products}) => {
   //Conectamos el contexto, traemos el estado y la función addToCart
-  const { products, addToCart } = useContext(AppContext);
+  const { productos, addToCart } = useContext(AppContext);
   //Función que agrega al carrito
   const handleAddToCart = (product) => () => {
     addToCart(product);

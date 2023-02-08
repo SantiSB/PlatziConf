@@ -3,16 +3,16 @@ import React from 'react';
 const Product = ({ product, handleAddToCart }) => {
   return (
     <div className="Products-item">
-      <img src={`http://localhost:1337${product.attributes.image.data[0].attributes.url}`} alt={product.attributes.name} />
+      <img src={`${product.image}`} alt={product.name} />
       <div className="Product-item-info">
         <h2>
-        {product.attributes.title}
+        {product.title}
           <span>
             $
-            {product.attributes.price}
+            {product.price}
           </span>
         </h2>
-        <p>{product.attributes.description}</p>
+        <p>{product.description}</p>
       </div>
       {/* Invocamos la función de agregar al carrito y le pasamos el producto a agregar */}
       <button type="button" onClick={handleAddToCart(product)}>Comprar</button>
