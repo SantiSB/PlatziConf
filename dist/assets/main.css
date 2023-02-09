@@ -120,9 +120,7 @@ a {
 .Information-sidebar {
   margin: 10px 0 0 0;
 }
-.Information-back {
-  margin: 10px 0 0 0;
-}
+
 .Information-item {
   display: flex;
   justify-content: space-between;
@@ -198,11 +196,29 @@ input {
     outline: none;
 }
 .Payment {
-  grid-template-columns: 3fr 1fr;
-  grid-gap: 2rem;
-  grid-row-gap: 1.5em;
-  display: grid;
+  display: flex;
+  justify-content: center;
+  margin-top: 5rem;
 }
+
+.Payment-content {
+  width: 100%;
+}
+
+.Payment-button {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+
+}
+
+.Payment-button div{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 1rem;
+}
+
 .Payment-back {
   margin: 10px 0 0 0;
 }
@@ -233,10 +249,13 @@ input {
 }
 
 .Success {
-  margin: 0 0 4em 0;
+  margin: 5rem 0 4rem 0;
+  text-align: center;
 }
 .Success-map {
-  margin: 10px 0 0 0;
+  margin: 2rem 1rem;
+  border: 3.5px solid #9c28b1;
+  border-radius: 5px;
 }
 
 .Header {
@@ -261,11 +280,6 @@ input {
   color: #33b1ff;
 }
 
-.Footer {
-  display: flex;
-  justify-content: space-between;
-}
-
 body {
   margin: 0;
   padding: 0;
@@ -275,7 +289,7 @@ body {
 
 .Main {
   padding: 10px;
-  grid-template-columns: minmax(auto, 768px);
+  grid-template-columns: minmax(auto, 80%);
   display: grid;
   justify-content: center;
 }
