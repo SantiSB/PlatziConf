@@ -7,7 +7,7 @@ Welcome to the Pet Shop E-Commerce with PayPal repository! This comprehensive pr
 
 ## Check It Out
 
-👉 [Paypal E-Commerce (PetShop) 🛍️🐾](https://platzi-dbb78.web.app/)
+👉 [PayPal E-Commerce (PetShop) 🛍️🐾](https://platzi-dbb78.web.app/)
 
 ## 👨‍💻 How to Contribute
 
@@ -74,7 +74,7 @@ I will review your pull request and might offer feedback or suggestions to enhan
 
 ### Merge and Celebrate:
 
-Once your pull request is approved and any requested changes are addressed, your contribution will be merged into the develop branch. Congratulations, you've successfully contributed to the Paypal E-Commerce (PetShop) App 🎉
+Once your pull request is approved and any requested changes are addressed, your contribution will be merged into the develop branch. Congratulations, you've successfully contributed to the PayPal E-Commerce (PetShop) App 🎉
 
 ## 👨‍💻 Tech Stack:
 ![react](https://github.com/SantiSB/e-commerce/assets/55597241/bf57b7ef-5add-4cb2-a8be-ddd7ad8720d3)
