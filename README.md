@@ -1,17 +1,17 @@
-# PayPal E-Commerce (PetShop) 🛍️🐕
+# PayPal E-Commerce (PetShop) 🛍️🐾
 
 Welcome to the PayPal E-Commerce (PetShop) App! 👋
 
-This repository serves as a comprehensive collection of exercises and practical examples related to testing in JavaScript. You'll find a wide range of testing scenarios here, including unit tests, end-to-end (E2E) tests, API testing, database connectivity, and more.
+Welcome to the Pet Shop E-Commerce with PayPal repository! This comprehensive project is a fully-fledged implementation of a user-friendly online store for pet-related products, thoughtfully designed to cater to the needs of pet enthusiasts and pet businesses alike. With seamless integration with PayPal, this e-commerce solution ensures secure and hassle-free transactions for customers.
 
 
 ## Check It Out
 
-👉 [Paypal E-Commerce (PetShop) 🛍️🐕](https://platzi-dbb78.web.app/)
+👉 [Paypal E-Commerce (PetShop) 🛍️🐾](https://platzi-dbb78.web.app/)
 
 ## 👨‍💻 How to Contribute
 
-I'm thrilled to have you contribute to PayPal E-Commerce (PetShop) 🧪!
+I'm thrilled to have you contribute to PayPal E-Commerce (PetShop) 🛍️🐾!
 Follow these steps to get started:
 
 ### Fork the Repository:
