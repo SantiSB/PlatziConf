@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from './Header';
-import '../styles/components/Layout.css'
+import '../styles/components/Layout.css';
 
 const Layout = ({ children }) => {
   return (
@@ -9,6 +9,6 @@ const Layout = ({ children }) => {
       {children}
     </div>
   );
-}
+};
 
 export default Layout;

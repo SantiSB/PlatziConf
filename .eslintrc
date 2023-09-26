@@ -22,7 +22,9 @@
         "error",
         "absolute-first"
       ],
-      "import/newline-after-import": "error"
+      "import/newline-after-import": "error",
+      "react/function-component-definition" : "off",
+      "arrow-body-style": "off"
     },
     "globals": {
       "window": true,
@@ -33,5 +35,8 @@
       "Blob": true,
       "navigator": true
     },
-    "parser": "babel-eslint"
+    // "parser": "babel-eslint",
+    "parserOptions": {
+      "sourceType": "module"
+    }
   }

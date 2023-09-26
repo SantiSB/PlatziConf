@@ -1,12 +1,12 @@
 import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Divider, ListItem, ListItemText } from '@mui/material';
 import { PayPalButton } from 'react-paypal-button-v2';
 import AppContext from '../context/AppContext';
 import '../styles/components/Payment.css';
-import { Divider, ListItem, ListItemText } from '@mui/material';
 
 const Payment = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const { state, addNewOrder } = useContext(AppContext);
   const { cart, buyer } = state;
 
@@ -31,7 +31,7 @@ const Payment = () => {
       };
 
       addNewOrder(newOrder);
-      navigate('/checkout/success')
+      navigate('/checkout/success');
     }
   };
 
@@ -49,23 +49,19 @@ const Payment = () => {
         {cart.map((item) => (
           <>
             <ListItem>
-              <ListItemText
-                primary={item.title}
-              />
-              $ {item.price}
+              <ListItemText primary={item.title} />$ {item.price}
             </ListItem>
             <Divider />
           </>
         ))}
         <div className="Payment-button">
-
           <PayPalButton
             paypalOptions={paypalOptions}
             buttonStyles={buttonStyles}
             amount={handleSumTotal()}
-            onSuccess={data => handlePaymentSuccess(data)}
-            onError={error => console.log(error)}
-            onCancel={data => console.log(data)}
+            onSuccess={(data) => handlePaymentSuccess(data)}
+            onError={(error) => console.log(error)}
+            onCancel={(data) => console.log(data)}
           />
         </div>
       </div>

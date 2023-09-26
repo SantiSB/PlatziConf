@@ -1,77 +1,93 @@
+# Paypal E-Commerce (PetShop) 🛍️🐕
 
-# E-Commerce Paypal
+Welcome to the Paypal E-Commerce (PetShop) App! 👋
 
-:wave: Welcome ! I have created a Pet Shop (E-Commerce) using React, MUI, Axios and Webpack. Check it out :point_down:
-
-:credit_card: Here you can find a virtual pet shop and simulate a purchase process with Paypal :grey_exclamation::grey_exclamation:
-
-:world_map: Also you can see your real location in Google Maps at the end of the checkout process :grey_exclamation::grey_exclamation:
-
-## Features
-
-- Display products
-- Add products to shopping cart
-- Delete products from shopping cart
-- Fill a form with personal information
-- Checkout with Paypal
-- Location with Google Maps
+This repository serves as a comprehensive collection of exercises and practical examples related to testing in JavaScript. You'll find a wide range of testing scenarios here, including unit tests, end-to-end (E2E) tests, API testing, database connectivity, and more.
 
 
-## Demo
+## Check It Out
 
+👉 [Paypal E-Commerce (PetShop) 🛍️🐕](https://platzi-dbb78.web.app/)
 
+## 👨‍💻 How to Contribute
 
-![DemoEcommerce](https://user-images.githubusercontent.com/55597241/217887434-0ee47015-07ee-4754-8452-644720fe7834.gif)
+I'm thrilled to have you contribute to Paypal E-Commerce (PetShop) 🧪!
+Follow these steps to get started:
 
+### Fork the Repository:
 
+Click the "Fork" button at the upper-right corner of the repository page. This action will create a personal copy of the repository in your GitHub account.
 
-## Try It Yourself
+### Clone the Forked Repository:
 
-:point_right: https://platzi-dbb78.web.app/
-
-## Cloning
-
-Clone my-project with git clone
+Clone your forked repository to your local machine using this command:
 
 ```bash
-  git clone https://github.com/SantiSB/E-Commerce.git
+  git clone https://github.com/SantiSB/e-commerce.git
 ```
-## Installation
 
-Install packages with npm
+### Switch to the Develop Branch:
+
+Navigate to the develop branch to ensure your work aligns with the latest development state:
 
 ```bash
-  npm install
+git checkout develop
 ```
-    
-## Deployment
 
-To deploy this project in local environment
+### Create a New Branch:
+
+Move to the repository's directory and create a new branch for your contribution. Name the branch descriptively, such as feature-your-feature or bugfix-the-bug:
 
 ```bash
-  nmp run start
+git checkout -b feature-your-feature
 ```
 
+### Install Dependencies:
 
+After cloning, navigate to the project directories and install required packages using npm:
 
-## Tech Stack
+```bash
+npm install
+```
 
-![1174949_js_react js_logo_react_react native_icon (1)](https://user-images.githubusercontent.com/55597241/217683940-83d0cd41-96c5-4d95-89f9-602ce8c95162.png)
-![icons8-material-ui-48](https://user-images.githubusercontent.com/55597241/217684209-f5d3b30c-8f64-48ff-bf6b-4326933680f1.png)
-![icons8-html-5-48](https://user-images.githubusercontent.com/55597241/217684664-ff7fd9fe-7585-4fa4-9730-9e36e84c004d.png)
-![icons8-css3-48](https://user-images.githubusercontent.com/55597241/217684672-0b43ef76-66b4-4bf2-8db3-47a1032ea6d1.png)
-![icons8-javascript-48](https://user-images.githubusercontent.com/55597241/217684680-a256ed1c-bcd9-4506-a16b-41d6cb41356c.png)
-![105893220-1bae8780-6013-11eb-87be-eeac845ecc6f](https://user-images.githubusercontent.com/55597241/217715607-5d2cb9de-6921-4ebb-8a7a-55c7595ba043.png)
-![icons8-webpack-48](https://user-images.githubusercontent.com/55597241/217880963-5ffa1e3b-7138-4672-9f23-d2315400996d.png)
+### Make Your Changes:
 
-- :man_technologist: React v18.2.0
-- :man_technologist: MUI v5.10.3
-- :man_technologist: HTML
-- :man_technologist: CSS
-- :man_technologist: JavaScript
-- :man_technologist: Axios
-- :man_technologist: Webpack
+Implement the necessary changes or improvements to the codebase.
+
+### Commit and Push:
+
+Once you've made your changes, commit them with a clear and concise commit message. Then, push your changes to your forked repository:
+
+```bash
+git add .
+git commit -m "Brief description of your changes"
+git push origin feature-your-feature
+```
+
+### Create a Pull Request:
+
+Head to the original repository and click "Pull Request." Choose the develop branch as the target and provide a detailed description of your changes. Afterward, submit the pull request.
+
+### Review and Collaboration:
+
+I will review your pull request and might offer feedback or suggestions to enhance your contribution. Collaboration and iteration are key!
+
+### Merge and Celebrate:
+
+Once your pull request is approved and any requested changes are addressed, your contribution will be merged into the develop branch. Congratulations, you've successfully contributed to the Paypal E-Commerce (PetShop) App 🎉
+
+## 👨‍💻 Tech Stack:
+
+| [React](https://es.react.dev/)
+| [CSS](https://developer.mozilla.org/es/docs/Web/CSS)
+| [MUI](https://mui.com/material-ui/)
+| [PayPal](https://www.npmjs.com/package/@paypal/react-paypal-js)
+| [Webpack](https://webpack.js.org/)
+| [Babel](https://babeljs.io/)
+| [ESLint](https://eslint.org/)
+| [Prettier](https://prettier.io/)
+| [Firebase](https://firebase.google.com/?hl=es)
 
 ## Authors
 
-- :robot: [@SantiSB](https://github.com/SantiSB)
+[🐱‍💻@SantiSB](https://github.com/SantiSB)

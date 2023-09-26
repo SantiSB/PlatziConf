@@ -14,27 +14,23 @@ const App = () => {
   const initialState = useInitialState();
 
   const isEmpty = Object.keys(initialState.state).length;
-  return (
-    <>
-      {isEmpty > 0 ? (
-        <AppContext.Provider value={initialState}>
-          <BrowserRouter>
-            <Layout>
-              <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/checkout" element={<Checkout />} />
-                <Route path="/checkout/information" element={<Information />} />
-                <Route path="/checkout/payment" element={<Payment />} />
-                <Route path="/checkout/success" element={<Success />} />
-                <Route path="*" element={<NotFound />} />
-              </Routes>
-            </Layout>
-          </BrowserRouter>
-        </AppContext.Provider>
-      ) : (
-        <h1>Loading...</h1>
-      )}
-    </>
+  return isEmpty > 0 ? (
+    <AppContext.Provider value={initialState}>
+      <BrowserRouter>
+        <Layout>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/checkout" element={<Checkout />} />
+            <Route path="/checkout/information" element={<Information />} />
+            <Route path="/checkout/payment" element={<Payment />} />
+            <Route path="/checkout/success" element={<Success />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </Layout>
+      </BrowserRouter>
+    </AppContext.Provider>
+  ) : (
+    <h1>Loading...</h1>
   );
 };
 
